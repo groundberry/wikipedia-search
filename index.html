@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wikipedia search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css" media="screen" title="no title">
+  </head>
+  <body class="container">
+    <div>
+      <h1 class="wiki-title">Wikipedia Search</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3 search-box">
+        <input type="search" id="search-input" class="form-control" placeholder="Search here">
+      </div>
+    </div>
+    <div class="text-center row">
+      <div>
+        <button id="search-button" class="btn btn-primary search-button col-sm-2 col-xs-offset-4">Enter search</button>
+      </div>
+      <div>
+        <button id="random-button" class="btn btn-primary search-random-button col-sm-2">Random search</button>
+      </div>
+    </div>
+    <ul id="search-results" class="result-list">
+    </ul>
+    <footer>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </body>
+</html>

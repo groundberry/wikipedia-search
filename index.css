@@ -1,0 +1,55 @@
+body {
+  background-color: #00cca3;
+  color: #fff;
+}
+
+.wiki-title {
+  font-size: 4em;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.search-box {
+  margin-top: 20px;
+}
+
+.search-button {
+  background-color: #009973;
+  border-color: #008060;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.search-button:hover {
+  background-color: #008066;
+}
+
+.search-random-button {
+  background-color: #00b38f;
+  border-color: #009973;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.search-random-button:hover {
+  background-color: #00997a;
+}
+
+.result-list {
+  list-style: none;
+}
+
+.result-row {
+  background-color: #fff;
+  color: #555;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.result-thumbnail {
+  width: 100%;
+  display: block;
+  margin: 15px auto;
+}
