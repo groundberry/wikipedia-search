@@ -3,12 +3,13 @@ var $searchButton = $('#search-button');
 var $randomButton = $('#random-button');
 var $searchResults = $('#search-results');
 
-function generateURL() {
-  return 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&callback=?&gsrsearch=' + $searchInput.val();
+function generateURL(input) {
+  return 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&callback=?&gsrsearch=' + input;
 };
 
 function generateResult(result) {
   var $row = $('<li class="row result-row" />');
+
   var $text = $('<div class="col-sm-10" />');
   var $title = $('<h1 />', {text: result.title});
   var $extract = $('<p />', {text: result.extract});
@@ -27,9 +28,10 @@ function generateResult(result) {
   return $row;
 }
 
-function getData() {
+function getData(input) {
   $searchResults.empty();
-  $.getJSON(generateURL()).then(function(data) {
+
+  $.getJSON(generateURL(input)).then(function(data) {
     var pages = data.query.pages;
     Object.keys(pages).forEach(function(key) {
       $searchResults.append(generateResult(pages[key]));
@@ -38,5 +40,15 @@ function getData() {
 }
 
 $searchButton.on('click', function() {
-  getData();
+  var input = $searchInput.val();
+
+  getData(input);
+});
+
+$randomButton.on('click', function() {
+  var choices = ['Seattle', 'London', 'Madrid'];
+  var index = Math.floor(Math.random() * choices.length);
+  var randomInput = choices[index];
+
+  getData(randomInput);
 });
